@@ -120,6 +120,30 @@ header li a:hover {
     border: 2px solid black;
 }
 
+.article {
+    text-align: center;
+}
+
+.article h1 {
+    margin: 10px;
+    padding: 20px;
+}
+
+.article p {
+    margin: 10px;
+    padding: 20px;
+}
+
+.article img {
+    margin: 10px;
+    border: 2px solid black;
+}
+
+.article a:hover {
+    background-color: grey;
+    transition: 0.5s;
+}
+
 
 /* //////////////////////////// FOOTER //////////////////////////// */
 
