@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+
+/* Police d'écriture du titre */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+/* Police d'écriture du texte */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/* Corps de la page */
+
+body {
+    margin: 0;
+    /* Marge extérieure */
+    padding: 0;
+    /* Marge intérieure */
+    font-family: 'Montserrat', sans-serif;
+    background: rgb(255, 251, 243);
+    background-repeat: no-repeat;
+    /* l'image ne se répète pas s'il n'y a assez de place */
+}
+
+
+/* //////////////////////////// HEADER //////////////////////////// */
+
+header {
+    background: rgb(117, 153, 150);
+    background-repeat: no-repeat;
+    /* l'image de fond ne se répète pas si les dimensions changent */
+    border-bottom: 2px solid white;
+    padding: 20px;
+    text-align: center;
+    top: 0px;
+}
+
+
+/* Bandeau noir dans le header contenant les onglets */
+
+header nav {
+    background-color: rgb(0, 0, 0);
+    justify-content: space-between;
+    border: 2px solid rgb(196, 196, 196);
+    display: flex;
+    /* Aligner tous les éléments */
+    flex-wrap: wrap;
+    align-items: center;
+    padding-right: 10px;
+}
+
+
+/* Logo NASA */
+
+header nav img {
+    width: 120px;
+}
+
+
+/* Titre principal */
+
+header nav h1 {
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+    font-family: 'Raleway';
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+/* Onglets */
+
+header ul {
+    display: flex;
+    /* centrage des onglets dans le header */
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+    /* suppression des points de la liste */
+    background-color: rgba(37, 37, 37, 0.774);
+    overflow: hidden;
+    padding: 0;
+}
+
+header li {
+    float: left;
+    /* mettre le menu en ligne au lieu de colonne */
+}
+
+
+/* Modification des onglets individuellement */
+
+header li a {
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+    /* espace entre chaque onglet */
+    display: block;
+    /* affichage en bloc */
+    font-size: 20px;
+}
+
+
+/* modification de la couleur lors du survol de la souris des onglets */
+
+header li a:hover {
+    background-color: grey;
+    transition: 0.5s;
+}
+
+
+/* //////////////////////////// PAGE ACCUEIL //////////////////////////// */
+
+.home {
+    text-align: center;
+    margin: 10px;
+}
+
+.home img {
+    margin: 10px;
+    border: 2px solid black;
+}
+
+
+/* //////////////////////////// FOOTER //////////////////////////// */
+
+footer {
+    background-color: black;
+    position: sticky;
+    /* Garder le footer fixé en bas de page */
+    bottom: 0px;
+}
+
+footer h2 a {
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    display: block;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+
+/* Lors du survol de la souris, le bouton va devenir gris avec une transition de 0.5s */
+
+footer h2 a:hover {
+    background-color: rgb(56, 56, 56);
+    transition: 0.5s;
+}
