@@ -1,0 +1,42 @@
+<%- include('partial_headers.ejs'); %>
+
+    <h1>List of persons</h1>
+
+    <!-- after session -->
+    <% if (flashMessage) { %>
+        <p style='color:red'>
+            <%= flashMessage %>
+        </p>
+        <% } %>
+
+            <p><a href='/persons/edit/0'>&raquo; Add a new person</a></p>
+
+            <table class="table table-striped table-bordered table-hover">
+                <tr>
+                    <td>ID</td>
+                    <td>Name</td>
+                </tr>
+
+                <% if (persons.length) { %>
+                    <% for (var c of persons) { %>
+                        <tr>
+                            <td>
+                                <%= c.person_id %>
+                            </td>
+                            <td>
+                                <%= c.person_name %>
+                            </td>
+                            <td>
+                                <%= c.person_name %>
+                            </td>
+                            <td><a href='/persons/show/<%= c.person_id %>'>[SHOW]</a></td>
+                            <td><a href='/persons/edit/<%= c.person_id %>'>[EDIT]</a></td>
+                            <td><a href='/persons/del/<%= c.person_id %>'>[DEL]</a></td>
+                        </tr>
+                        <% }%>
+                            <% } %>
+
+            </table>
+            </body>
+
+            </html>
