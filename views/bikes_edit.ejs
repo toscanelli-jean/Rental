@@ -4,6 +4,27 @@
 <p><a href='/bikes/list'>&raquo; Back to the list</a></p>
 <form action='/bikes/update/<%= onebike.bike_id %>' method='post' enctype='application/x-www-form-urlencoded'>
 <table class="table table-striped table-bordered table-hover">
+
+    <tr><td>ID</td>
+        <td> <input type='text' name='bike_id' value='<%= onebike.bike_id %>' /></td>
+    </tr>
+
+    <tr><td>Model</td>
+        <td> <input type='text' name='bike_name' value='<%= onebike.bike_name %>' /></td>
+    </tr>
+    
+    <tr><td>Baseprice</td>
+        <td> <input type='text' name='bike_price' value='<%= onebike.bike_price %>' /></td>
+    </tr>
+    
+    <tr><td>Height(kg)</td>
+        <td> <input type='text' name='bike_height' value='<%= onebike.bike_height %>' /></td>
+    </tr>
+    
+    <tr><td>Brand</td>
+        <td> <input type='text' name='bike_brand' value='<%= onebike.bike_brand %>' /></td>
+    </tr>
+    
     <tr><td>person</td>
         <td><select name='bike_person'>
             <% for (var b of persons) { %>
@@ -11,12 +32,15 @@
                         <%- b.person_id==onebike.person_id ? "selected='selected'" : "" %>
                 ><%= b.person_name %></option>
             <% }%>
-        </select></td></tr>
-    <tr><td>Model</td>
-        <td> <input type='text' name='bike_name' value='<%= onebike.bike_name %>' /></td></tr>
-    <tr><td>Baseprice</td>
-        <td> <input type='number' name='bike_price' value='<%= onebike.bike_price %>' /></td></tr>
-        <td colspan='2'> <input type='submit' value='SEND' /></td></tr>
+        </select></td>
+    </tr>
+    
+    
+    
+        
+    
+        
+    <tr><td colspan='2'> <input type='submit' value='SEND' /></td></tr>
 </table>
 </form>
 </body>
