@@ -28,7 +28,7 @@ module.exports = {
   async getAllBike() {
     try {
       conn = await pool.getConnection();
-      sql = "SELECT * FROM bikes INNER JOIN persons ON bike_person=person_id";
+      sql = "SELECT * FROM bikes INNER JOIN persons ON bike_person=person_id ORDER BY bike_id";
       const rows = await conn.query(sql);
       conn.end();
       console.log("bikes FETCHED: "+rows.length);

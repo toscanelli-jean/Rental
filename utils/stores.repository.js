@@ -28,7 +28,7 @@ module.exports = {
   async getAllStore() {
     try {
       conn = await pool.getConnection();
-      sql = "SELECT * FROM stores ";
+      sql = "SELECT * FROM stores ORDER BY store_id";
       const rows = await conn.query(sql);
       conn.end();
       console.log("stores FETCHED: "+rows.length);
@@ -65,11 +65,11 @@ module.exports = {
       throw err;
     }
   },
-  async addOneStore(person_id) {
+  async addOneStore() {
     try {
       conn = await pool.getConnection();
-      sql = "INSERT INTO stores store_id VALUES (NULL)";
-      const okPacket = await conn.query(sql, person_id);
+      sql = "INSERT INTO stores (store_id) VALUES (NULL)";
+      const okPacket = await conn.query(sql);
       conn.end();
       console.log(okPacket); // affectedRows, insertId
       return okPacket.insertId; 

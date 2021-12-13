@@ -40,8 +40,8 @@ async function storesEditAction(request, response){
 async function storesUpdateAction(request, response){
     // response.send('Update action... store '+request.params.store_id+' '+request.body.store_name);
     var store_id = request.params.store_id;
-    if (store_id==="0") store_id = await storeRepo.addOneStore(request.body.store_person);
-    var numRows = await storeRepo.editOneStore(store_id, request.body.store_name, request.body.store_localisation, request.body.store_size, request.body.store_stock,request.body.store_);
+    if (store_id==="0") store_id = await storeRepo.addOneStore();
+    var numRows = await storeRepo.editOneStore(store_id, request.body.store_name, request.body.store_localisation, request.body.store_size, request.body.store_stock,request.body.store_brandNb);
     
     // only after session
     request.session.flashMessage = "ROWS MODIFIED: "+numRows;
