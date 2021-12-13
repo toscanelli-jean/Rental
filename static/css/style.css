@@ -123,25 +123,6 @@ header li a:hover {
 
 /* //////////////////////////// FOOTER //////////////////////////// */
 
-
-/*
-footer {
-    background-color: black;
-    position: sticky;
-    bottom: 0px;
-}
-
-
-footer h2 {
-    text-decoration: none;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    display: block;
-    font-family: 'Roboto Condensed', sans-serif;
-}
-*/
-
 .footer-dark {
     padding: 50px 0;
     color: #f0f9ff;
