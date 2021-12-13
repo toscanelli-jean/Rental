@@ -4,11 +4,11 @@ module.exports = {
   getBlankBike(){
     return { 
       "bike_id": 0, 
-      "bike_person": 0, 
       "bike_name": "XXX", 
       "bike_price": 0, 
-      "bike_height": 0,
-      "bike_brand": 0
+      "bike_height": 0.0,
+      "bike_brand": "XXX",
+      "bike_person": 0 
 
     };
   },
@@ -68,7 +68,7 @@ module.exports = {
   async addOneBike(person_id) {
     try {
       conn = await pool.getConnection();
-      sql = "INSERT INTO bikes (bike_id, bike_person) VALUES (null, ?)";
+      sql = "INSERT INTO bikes (bike_id, bike_person) VALUES (NULL, ?)";
       const okPacket = await conn.query(sql, person_id);
       conn.end();
       console.log(okPacket); // affectedRows, insertId
@@ -77,12 +77,12 @@ module.exports = {
       throw err;
     }
   },
-  async editOneBike(bike_id, bike_person, bike_name, bike_price) {
+  async editOneBike(bike_id, bike_name, bike_price, bike_height, bike_brand,bike_person) {
     try {
       conn = await pool.getConnection();
-      sql = "UPDATE bikes SET bike_person=?, bike_name=?, bike_price=?, WHERE bike_id=?";
+      sql = "UPDATE bikes SET bike_name=?, bike_price=?, bike_height=?, bike_brand=?, bike_person=? WHERE bike_id=?";
       const okPacket = await conn.query(sql, 
-            [bike_person, bike_name, bike_price, bike_id]);
+            [bike_name, bike_price, bike_height, bike_brand, bike_person, bike_id]);
       conn.end();
       console.log(okPacket); // affectedRows, insertId
       return okPacket.affectedRows; 
