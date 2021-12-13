@@ -7,9 +7,9 @@ dotenv.config();
 const session = require("express-session");
 app.use(session({
     secret: "SecretRandomKey123QWE",
-    saveUninitialized:true,
+    saveUninitialized: true,
     cookie: { maxAge: 1000 * 60 * 60 * 24 },
-    resave: false 
+    resave: false
 }));
 
 // add after SESSION
@@ -17,11 +17,11 @@ app.use(session({
 auth.initialization(app); */
 
 // add first
-app.listen(process.env.SERVER_PORT, 
-    function () { console.log("Server listening at:" + process.env.SERVER_PORT); }
+app.listen(process.env.SERVER_PORT,
+    function() { console.log("Server listening at:" + process.env.SERVER_PORT); }
 );
 app.get('/', (request, response) => {
-  response.send('Hello Express World!');
+    response.render('accueil');
 });
 // CUT 1
 
@@ -33,9 +33,6 @@ app.use(bodyParser.json(), bodyParser.urlencoded({ extended: true })); //callbac
 // CUT 2
 
 app.use('/static', express.static(__dirname + '/static'));
-app.use("/bikes", require("./controllers/bikes.route")); 
+app.use("/bikes", require("./controllers/bikes.route"));
+app.use("/accueil", require("./controllers/accueil.route"));
 // CUT 3
-
-
-
-

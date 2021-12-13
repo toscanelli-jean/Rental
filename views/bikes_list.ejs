@@ -1,36 +1,46 @@
 <%- include('partial_headers.ejs'); %>
-<h1>List of bikes</h1>
 
-<!-- after session -->
-<% if (flashMessage) { %>
-    <p style='color:red'><%= flashMessage %></p>
-<% } %> 
+    <h1>List of bikes</h1>
 
-<p><a href='/bikes/edit/0'>&raquo; Add a new bike</a></p>
+    <!-- after session -->
+    <% if (flashMessage) { %>
+        <p style='color:red'>
+            <%= flashMessage %>
+        </p>
+        <% } %>
 
-<table class="table table-striped table-bordered table-hover">
-    <tr>
-        <td>ID</td>
-        <td>person</td>
-        <td>bike</td>
-        <td>Show</td>
-        <td>Edit</td>
-        <td>Del</td>
-    </tr>
-    
-<% if (bikes.length) { %>
-    <% for (var c of bikes) { %>
-        <tr>
-            <td><%= c.bike_id %></td>
-            <td><%= c.person_name %></td>
-            <td><%= c.bike_name %></td>
-            <td><a href='/bikes/show/<%= c.bike_id %>'>[SHOW]</a></td>
-            <td><a href='/bikes/edit/<%= c.bike_id %>'>[EDIT]</a></td>
-            <td><a href='/bikes/del/<%= c.bike_id %>'>[DEL]</a></td>
-        </tr>
-    <% }%>
-<% } %>
+            <p><a href='/bikes/edit/0'>&raquo; Add a new bike</a></p>
 
-</table>
-</body>
-</html>
+            <table class="table table-striped table-bordered table-hover">
+                <tr>
+                    <td>ID</td>
+                    <td>person</td>
+                    <td>bike</td>
+                    <td>Show</td>
+                    <td>Edit</td>
+                    <td>Del</td>
+                </tr>
+
+                <% if (bikes.length) { %>
+                    <% for (var c of bikes) { %>
+                        <tr>
+                            <td>
+                                <%= c.bike_id %>
+                            </td>
+                            <td>
+                                <%= c.person_name %>
+                            </td>
+                            <td>
+                                <%= c.bike_name %>
+                            </td>
+                            <td><a href='/bikes/show/<%= c.bike_id %>'>[SHOW]</a></td>
+                            <td><a href='/bikes/edit/<%= c.bike_id %>'>[EDIT]</a></td>
+                            <td><a href='/bikes/del/<%= c.bike_id %>'>[DEL]</a></td>
+                        </tr>
+                        <% }%>
+                            <% } %>
+
+            </table>
+            </body>
+
+            </html>
