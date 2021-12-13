@@ -1,13 +1,13 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const bikeRepo = require("../utils/bikes.repository");
+const bikeRepo = require('../utils/bikes.repository');
 
-router.get("/", bikeRootAction);
-router.get("/list", bikeListAction);
-router.get("/show/:bike_id", bikeShowAction);
-router.get("/del/:bike_id", bikeDelAction);
-router.get("/edit/:bike_id", bikeEditAction);
-router.post("/update/:bike_id", bikeUpdateAction);
+router.get('/', bikeRootAction);
+router.get('/list', bikeListAction);
+router.get('/show/:bike_id', bikeShowAction);
+router.get('/del/:bike_id', bikeDelAction);
+router.get('/edit/:bike_id', bikeEditAction);
+router.post('/update/:bike_id', bikeUpdateAction);
 
 
 function bikeRootAction(request, response){
@@ -37,11 +37,12 @@ async function bikeEditAction(request, response){
       var bike = bikeRepo.getBlankBike();
     response.render("bikes_edit", { "onebike": bike, "persons": persons });
 }
+
 async function bikeUpdateAction(request, response){
     // response.send('Update action... bike '+request.params.bike_id+' '+request.body.bike_name);
     var bike_id = request.params.bike_id;
-    if (bike_id==0) bike_id = await bikeRepo.addOneBike(request.body.bike_person);
-    var numRows = await bikeRepo.editOneBike(bike_id, request.body.bike_person, request.body.bike_name, request.body.bike_price);
+    if (bike_id==="0") bike_id = await bikeRepo.addOneBike(request.body.bike_person);
+    var numRows = await bikeRepo.editOneBike(bike_id, request.body.bike_name, request.body.bike_price, request.body.bike_height, request.body.bike_brand,request.body.bike_person);
     
     // only after session
     request.session.flashMessage = "ROWS MODIFIED: "+numRows;
