@@ -13,8 +13,8 @@ app.use(session({
 }));
 
 // add after SESSION
-const auth = require("./utils/users.auth");
-auth.initialization(app);
+/* const auth = require("./utils/users.auth");
+auth.initialization(app); */
 
 // add first
 app.listen(process.env.SERVER_PORT, 
@@ -29,7 +29,7 @@ app.set("view engine", "ejs");
 app.set("views", "views");
 const bodyParser = require("body-parser");
 app.use(bodyParser.json(), bodyParser.urlencoded({ extended: true })); //callback, callback, ...
-app.use("/hello", require("./controllers/hello.route")); // path, callback
+//app.use("/hello", require("./controllers/hello.route")); // path, callback
 // CUT 2
 
 app.use('/static', express.static(__dirname + '/static'));
