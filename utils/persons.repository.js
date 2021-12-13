@@ -24,7 +24,7 @@ module.exports = {
     async getAllPerson() {
         try {
             conn = await pool.getConnection();
-            sql = "SELECT * FROM persons";
+            sql = "SELECT * FROM persons ORDER BY person_id";
             const rows = await conn.query(sql);
             conn.end();
             console.log("persons FETCHED: " + rows.length);
@@ -61,11 +61,11 @@ module.exports = {
             throw err;
         }
     },
-    async addOnePerson(person_id) {
+    async addOnePerson() {
         try {
             conn = await pool.getConnection();
-            sql = "INSERT INTO persons person_id VALUES (NULL)";
-            const okPacket = await conn.query(sql, person_id);
+            sql = "INSERT INTO persons (person_id) VALUES (NULL)";
+            const okPacket = await conn.query(sql);
             conn.end();
             console.log(okPacket); // affectedRows, insertId
             return okPacket.insertId;

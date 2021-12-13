@@ -40,7 +40,7 @@ async function personsEditAction(request, response) {
 async function personsUpdateAction(request, response) {
     // response.send('Update action... person '+request.params.person_id+' '+request.body.person_name);
     var person_id = request.params.person_id;
-    if (person_id === "0") person_id = await personRepo.addOnePerson(request.body.person_person);
+    if (person_id === "0") person_id = await personRepo.addOnePerson();
     var numRows = await personRepo.editOnePerson(person_id, request.body.person_name);
 
     // only after session

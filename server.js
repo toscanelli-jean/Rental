@@ -36,5 +36,7 @@ app.use('/static', express.static(__dirname + '/static'));
 app.use("/bikes", require("./controllers/bikes.route"));
 app.use("/accueil", require("./controllers/accueil.route"));
 app.use("/stores", require("./controllers/stores.route"));
+app.use("/persons", require("./controllers/persons.route"));
+
 
 // CUT 3
