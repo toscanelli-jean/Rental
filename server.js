@@ -35,4 +35,5 @@ app.use(bodyParser.json(), bodyParser.urlencoded({ extended: true })); //callbac
 app.use('/static', express.static(__dirname + '/static'));
 app.use("/bikes", require("./controllers/bikes.route"));
 app.use("/accueil", require("./controllers/accueil.route"));
+app.use("/stores", require("./controllers/stores.route"));
 // CUT 3

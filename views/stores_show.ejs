@@ -1,0 +1,42 @@
+<%- include('partial_headers.ejs'); %>
+    <h1>Single store Datasheet</h1>
+
+    <p><a href='/stores/list'>&raquo; Back to the list</a></p>
+    <table class="table table-striped table-bordered table-hover">
+        <tr>
+            <td>My Store</td>
+            <tr>
+                <td>brand</td>
+                <td>
+                    <%= onestore.store_name %>
+                </td>
+            </tr>
+            <tr>
+                <td>Model</td>
+                <td>
+                    <%= onestore.store_localisation %>
+                </td>
+            </tr>
+            <tr>
+                <td>price(€)</td>
+                <td>
+                    <%= onestore.store_size %>
+                </td>
+            </tr>
+            <tr>
+                <td>height(kg)</td>
+                <td>
+                    <%= onestore.store_stock %>
+                </td>
+            </tr>
+            <tr>
+                <td>ID of the person</td>
+                <td>
+                    <%= onestore.person_brandNb  %>
+                </td>
+            </tr>
+
+    </table>
+    </body>
+
+    </html>

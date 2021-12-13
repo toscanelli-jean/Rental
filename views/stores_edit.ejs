@@ -1,0 +1,36 @@
+<%- include('partial_headers.ejs'); %>
+<h1>Edit Single store</h1>
+
+<p><a href='/stores/list'>&raquo; Back to the list</a></p>
+<form action='/stores/update/<%= onestore.store_id %>' method='post' enctype='application/x-www-form-urlencoded'>
+<table class="table table-striped table-bordered table-hover">
+
+    <tr><td>ID</td>
+        <td> <input type='text' name='store_id' value='<%= onestore.store_id %>' /></td>
+    </tr>
+
+    <tr><td>Name</td>
+        <td> <input type='text' name='store_name' value='<%= onestore.store_name %>' /></td>
+    </tr>
+    
+    <tr><td>Localisation</td>
+        <td> <input type='text' name='store_localisation' value='<%= onestore.store_localisation %>' /></td>
+    </tr>
+    
+    <tr><td>Size(m^2)</td>
+        <td> <input type='text' name='store_size' value='<%= onestore.store_size %>' /></td>
+    </tr>
+    
+    <tr><td>stock</td>
+        <td> <input type='text' name='store_stock' value='<%= onestore.store_stock %>' /></td>
+    </tr>
+
+    <tr><td>brandNb</td>
+        <td> <input type='text' name='store_brandNb' value='<%= onestore.store_brandNb %>' /></td>
+    </tr>
+        
+    <tr><td colspan='2'> <input type='submit' value='SEND' /></td></tr>
+</table>
+</form>
+</body>
+</html>
